@@ -21,7 +21,7 @@ exports.getAccessToken = ({
     )
     // 不存在access_token
     if (!accessToken.access_token && accessToken.expires_time < currentTime) {
-      return request(url)
+      return request('GET', url)
         .then((data) => {
           const result = JSON.parse(data)
           console.log(result)
